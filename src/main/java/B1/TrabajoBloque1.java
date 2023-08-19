@@ -10,7 +10,7 @@ public class TrabajoBloque1 {
         String nombre= outin.promptStr("Ingrese nombre estudiante: ");
         estudiante.setNombre(nombre);
         System.out.printf("Bienvenido Sr. %s, %s", estudiante.getNombre(), estudiante.getId());
-        System.out.println("");
+        outin.imprimir("");
         int num=outin.promptInt("Ingrese número: ");
         if(num>mayor){
             mayor=num;
