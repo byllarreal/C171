@@ -106,7 +106,7 @@ public class Exercises {
         }
 
         /* Aca reforzamos el concepto de ciclos y listas y como podemos recorrerlas para
-            para guardar o devolver datos*/
+            para guardar o devolver datos */
         public void numerosPrimos(){
             List<Integer>primoss=new ArrayList<>();
             for (int i = 1; i <= 1000; i++) {
