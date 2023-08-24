@@ -41,15 +41,6 @@ public class Exercises {
         pausa= outin.promptStr("No existe el ejercicio");
     }
 
-    public static boolean isNumeric(String str) {
-        try {
-            double d = Double.parseDouble(str);
-        } catch (NumberFormatException nfe) {
-            return false; //Error no es numerico
-        }
-        return true; //Es numerico
-    }
-
     /*  Vimos conceptos y fundamentos básicos del lenguaje JAVA, en especial
         los diferentes tipos de variables y wrappers */
         public void conceptos(){
