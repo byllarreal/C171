@@ -8,6 +8,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Exercises {
+    //*********** Mis Variables globales **************
+    private String pausa="";
+    private OutIn outin=new OutIn();
 
     //*********** Mis Funciones ************************
     static boolean primos(int num){
@@ -34,6 +37,18 @@ public class Exercises {
     }
 
     //******************  Ejercicios resueltos en clase ***********************
+    public void porDefecto(){
+        pausa= outin.promptStr("No existe el ejercicio");
+    }
+
+    public static boolean isNumeric(String str) {
+        try {
+            double d = Double.parseDouble(str);
+        } catch (NumberFormatException nfe) {
+            return false; //Error no es numerico
+        }
+        return true; //Es numerico
+    }
 
     /*  Vimos conceptos y fundamentos básicos del lenguaje JAVA, en especial
         los diferentes tipos de variables y wrappers */
@@ -57,6 +72,8 @@ public class Exercises {
             outin.imprimir("6. Byte: Envuelve un valor entero pequeño (byte).");
             outin.imprimir("7. Character: Envuelve un carácter Unicode (char).");
             outin.imprimir("8. Boolean: Envuelve un valor booleano (boolean).");
+
+            pausa= outin.promptStr("Enter para continuar");
         }
 
         /* Vimos como hacer una clase, sus propiedades y constructor, tambien como
@@ -86,6 +103,8 @@ public class Exercises {
                 mayor=num;
             }
             System.out.printf("El número mayor es: %d ", mayor);
+            outin.imprimir("");
+            pausa= outin.promptStr("Enter para continuar");
         }
 
         /* Vimos el concepto de Arrays o arreglos, que son tipos de variables donde se pueden
@@ -103,6 +122,8 @@ public class Exercises {
                 nums[(numeros.length-1)-i]=numeros[i];
             }
             System.out.println(Arrays.toString(nums));
+
+            pausa= outin.promptStr("Enter para continuar");
         }
 
         /* Aca reforzamos el concepto de ciclos y listas y como podemos recorrerlas para
@@ -116,10 +137,14 @@ public class Exercises {
             }
 
             System.out.println("Primos de 1-1000: " + primoss.toString());
+
+            pausa= outin.promptStr("Enter para continuar");
         }
 
         public void secuenciaFibonacci(){
             System.out.println("Fibonacci hasta 20: " + fibonacci(20).toString());
+
+            pausa= outin.promptStr("Enter para continuar");
         }
 
 }
