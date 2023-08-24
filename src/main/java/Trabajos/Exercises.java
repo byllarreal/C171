@@ -88,6 +88,8 @@ public class Exercises {
             System.out.printf("El número mayor es: %d ", mayor);
         }
 
+        /* Vimos el concepto de Arrays o arreglos, que son tipos de variables donde se pueden
+            almacenar varios datos, y que podemos recorrerlos con los diferentes ciclos*/
         public void invertirOrden(){
             int numeros[]=new int[5];
             int nums[]=new int[5];
@@ -103,6 +105,8 @@ public class Exercises {
             System.out.println(Arrays.toString(nums));
         }
 
+        /* Aca reforzamos el concepto de ciclos y listas y como podemos recorrerlas para
+            para guardar o devolver datos*/
         public void numerosPrimos(){
             List<Integer>primoss=new ArrayList<>();
             for (int i = 1; i <= 1000; i++) {
