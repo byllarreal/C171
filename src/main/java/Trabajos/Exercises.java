@@ -1,7 +1,7 @@
 package Trabajos;
 
-import B1.Estudiante;
-import B1.Outin;
+import Trabajos.Estudent;
+import Trabajos.OutIn;
 
 import java.util.ArrayList;
 import java.util.Arrays;
