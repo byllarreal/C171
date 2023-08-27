@@ -16,7 +16,8 @@ public class Index {
             outin.imprimir("3. Arreglo: Invertir orden");
             outin.imprimir("4. Ciclos: Primos del 1 al 1000");
             outin.imprimir("5. Ciclos: Secuencia Fibonacci limite 20");
-            outin.imprimir("6. Salir");
+            outin.imprimir("6. Proyecto Final");
+            outin.imprimir("7. Salir");
             ejercicio=outin.promptInt("Ingrese número de ejercicio: ");
             Exercises exercises=new Exercises();
 
@@ -26,10 +27,11 @@ public class Index {
                 case 3:exercises.invertirOrden();break;
                 case 4:exercises.numerosPrimos();break;
                 case 5:exercises.secuenciaFibonacci();break;
-                case 6:break;
+                case 6:exercises.proyectoFinal();break;
+                case 7:break;
                 default:exercises.porDefecto();
             }
-        }while (ejercicio!=6);
+        }while (ejercicio!=7);
 
     }
 }

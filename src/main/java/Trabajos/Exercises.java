@@ -29,11 +29,19 @@ public class Exercises {
         int sig=1;
         int ant=0;
         List<Integer> secuencia=new ArrayList<>();
-        while (ant<=limite){
+        while (secuencia.size()<limite){
             secuencia.add(ant);
             sig=sig+ant;
             ant=sig-ant;
         }return secuencia;
+    }
+
+    static String aprobado(double nota){
+        if(nota>=3){
+            return "Estudiante APROBADO";
+        }else{
+            return "Estudiante REPROBADO";
+        }
     }
 
     //******************  Ejercicios resueltos en clase ***********************
@@ -118,7 +126,7 @@ public class Exercises {
         }
 
         /* Aca reforzamos el concepto de ciclos y listas y como podemos recorrerlas para
-            para guardar o devolver datos */
+            guardar o devolver datos */
         public void numerosPrimos(){
             List<Integer>primoss=new ArrayList<>();
             for (int i = 1; i <= 1000; i++) {
@@ -133,7 +141,43 @@ public class Exercises {
         }
 
         public void secuenciaFibonacci(){
-            System.out.println("Fibonacci hasta 20: " + fibonacci(20).toString());
+            System.out.println("Fibonacci los perimeros 20: " + fibonacci(20).toString());
+
+            pausa= outin.promptStr("Enter para continuar");
+        }
+
+        /* Vimos la estructura try{}catch, para la validación de errores
+           Y como implementarla en la solicitud de datos por ejmeplo,
+           también vimos como implementar alguna libreria de log de la
+            página maven repository, como respuesta al tipo de errores*/
+
+        public void proyectoFinal(){
+            outin.imprimir("Solicitud datos Estudiante");
+            Estudent estudent=new Estudent("S01");
+            boolean error=false;
+            do {
+                try {
+                    error=false;
+                    estudent.setNombre(outin.promptSstr("Ingrese nombre del estudiante: "));
+                    estudent.setApellido(outin.promptSstr("Ingrese apellido del estudiante: "));
+                    estudent.setTelefono(outin.promptSstr("Ingrese teléfono del estudiante: "));
+                    estudent.setCedula(outin.promptSstr("Ingrese cédula del estudiante: "));
+                    estudent.setPrograma(outin.promptSstr("Ingrese programa del estudiante: "));
+                    estudent.setPromedio(outin.promptDouble("Ingrese promedio del estudiante: "));
+                } catch (Exception e) {
+                    outin.imprimir("Tipo de datos incorrectos");
+                    error=true;
+                }
+            }while(error);
+
+            outin.imprimir(aprobado(estudent.getPromedio()) + ":");
+            outin.imprimir("Nombre: " + estudent.getNombre());
+            outin.imprimir("Apellido: " + estudent.getApellido());
+            outin.imprimir("Teléfono: " + estudent.getTelefono());
+            outin.imprimir("Cédula: " + estudent.getCedula());
+            outin.imprimir("Programa: " + estudent.getPrograma());
+            outin.imprimir("Promedio: " + String.valueOf(estudent.getPromedio()));
+            outin.imprimir("Successful record in table " + aprobado(estudent.getPromedio()).substring(11));
 
             pausa= outin.promptStr("Enter para continuar");
         }
